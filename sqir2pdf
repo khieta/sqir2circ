@@ -1,0 +1,8 @@
+#!/bin/sh
+
+FILE=${1%%.*}
+
+python fixformat.py ${FILE}.qasm ${FILE}_tmp
+./qasm2pdf ${FILE}_tmp
+mv ${FILE}_tmp.pdf $FILE.pdf
+rm ${FILE}_tmp ${FILE}_tmp.aux ${FILE}_tmp.dvi ${FILE}_tmp.eps ${FILE}_tmp.idx ${FILE}_tmp.log ${FILE}_tmp.tex 
